@@ -23,4 +23,36 @@ public class AppTest {
         String result = triangle.get_type().toString();
         assertEquals(expected, result.toString());
     }
+	
+    @Test
+    public void isoscelesTriangle() {
+        int a = 5;
+        int b = 7;
+        int c = 5;
+        triangle.classifyTriangle(a, b, c);
+        String expected = Triangle_Types.isosceles.toString();
+        String result = triangle.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+    @Test
+    public void ScaleneTriangle() {
+        int a = 8;
+        int b = 17;
+        int c = 15;
+        triangle.classifyTriangle(a, b, c);
+        String expected = Triangle_Types.Scalene.toString();
+        String result = triangle.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+    @Test
+    public void Nottriangle() {
+        int a = 8;
+        int b = 3;
+        int c = 15;
+        triangle.classifyTriangle(a, b, c);
+        String expected = Triangle_Types.Nottriangle.toString();
+        String result = triangle.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+	
 }  
