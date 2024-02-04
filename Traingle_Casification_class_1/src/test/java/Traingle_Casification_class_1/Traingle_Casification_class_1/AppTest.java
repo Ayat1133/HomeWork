@@ -54,5 +54,26 @@ public class AppTest {
         String result = triangle.get_type().toString();
         assertEquals(expected, result.toString());
     }
-	
+
+    @Test
+    public void negativeSides() {
+        int a = -5;
+        int b = -4;
+        int c = -3;
+        triangle.classifyTriangle(a, b, c);
+        Triangle_Types expected = Triangle_Types.Nottriangle;
+        Triangle_Types result = triangle.get_type();
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void zeroSides() {
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        triangle.classifyTriangle(a, b, c);
+        Triangle_Types expected = Triangle_Types.Nottriangle;
+        Triangle_Types result = triangle.get_type();
+        assertEquals(expected, result);
+    }
 }  
