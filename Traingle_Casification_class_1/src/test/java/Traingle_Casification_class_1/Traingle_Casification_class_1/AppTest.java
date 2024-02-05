@@ -65,6 +65,17 @@ public class AppTest {
         Triangle_Types result = triangle.get_type();
         assertEquals(expected, result);
     }
+    @Test
+    public void invalidSideLengths() {
+        int a = 0;
+        int b = 4;
+        int c = 3;
+        triangle.classifyTriangle(a, b, c);
+        assertEquals(Triangle_Types.Nottriangle, triangle.get_type());
+    }
+
+
+
 
 
 }  
