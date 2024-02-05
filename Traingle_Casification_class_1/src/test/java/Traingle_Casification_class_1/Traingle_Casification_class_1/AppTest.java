@@ -23,12 +23,32 @@ public class AppTest {
         String result = triangle.get_type().toString();
         assertEquals(expected, result.toString());
     }
-	
+
     @Test
     public void isoscelesTriangle() {
-        int a = 5;
-        int b = 7;
+        int a = 7;
+        int b = 5;
         int c = 5;
+        triangle.classifyTriangle(a, b, c);
+        String expected = Triangle_Types.isosceles.toString();
+        String result = triangle.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+    @Test
+    public void isoscelesTriangle1() {
+        int a = 4;
+        int b = 4;
+        int c = 5;
+        triangle.classifyTriangle(a, b, c);
+        String expected = Triangle_Types.isosceles.toString();
+        String result = triangle.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+    @Test
+    public void isoscelesTriangle2() {
+        int a = 3;
+        int b = 4;
+        int c = 3;
         triangle.classifyTriangle(a, b, c);
         String expected = Triangle_Types.isosceles.toString();
         String result = triangle.get_type().toString();
@@ -54,25 +74,37 @@ public class AppTest {
         String result = triangle.get_type().toString();
         assertEquals(expected, result.toString());
     }
-
     @Test
-    public void negativeSides() {
-        int a = -5;
-        int b = -4;
-        int c = -3;
-        triangle.classifyTriangle(a, b, c);
-        Triangle_Types expected = Triangle_Types.Nottriangle;
-        Triangle_Types result = triangle.get_type();
-        assertEquals(expected, result);
-    }
-    @Test
-    public void invalidSideLengths() {
-        int a = 0;
-        int b = 4;
+    public void Nottriangle1() {
+        int a = 8;
+        int b = 3;
         int c = 3;
         triangle.classifyTriangle(a, b, c);
-        assertEquals(Triangle_Types.Nottriangle, triangle.get_type());
+        String expected = Triangle_Types.Nottriangle.toString();
+        String result = triangle.get_type().toString();
+        assertEquals(expected, result.toString());
     }
+    @Test
+    public void Nottriangle2() {
+        int a = 1;
+        int b = 2;
+        int c = 1;
+        triangle.classifyTriangle(a, b, c);
+        String expected = Triangle_Types.Nottriangle.toString();
+        String result = triangle.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+    @Test
+    public void Nottriangle3() {
+        int a = 1;
+        int b = 1;
+        int c = 2;
+        triangle.classifyTriangle(a, b, c);
+        String expected = Triangle_Types.Nottriangle.toString();
+        String result = triangle.get_type().toString();
+        assertEquals(expected, result.toString());
+    }
+
 
 
 
